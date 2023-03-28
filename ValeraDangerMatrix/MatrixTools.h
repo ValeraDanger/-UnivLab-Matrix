@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 void GaussMethod(double** A, double* b, double* x, size_t matrix_dim);
 

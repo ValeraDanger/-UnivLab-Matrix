@@ -1,10 +1,10 @@
-#include "MatrixTools.h"
+п»ї#include "MatrixTools.h"
 #include <random>
 #include <iostream>
 #include <cmath>
 
 void GaussMethod(double** A, double* b, double* x, size_t matrix_dim){
-	/*Прямой ход*/
+	/*РџСЂСЏРјРѕР№ С…РѕРґ*/
 	for (size_t i = 0; i < matrix_dim; i++){
 		for (size_t j = i+1; j < matrix_dim; j++) {
 			double coef = A[j][i] / A[i][i];
@@ -15,7 +15,7 @@ void GaussMethod(double** A, double* b, double* x, size_t matrix_dim){
 		}
 	}
 
-	/*Обратный ход*/
+	/*РћР±СЂР°С‚РЅС‹Р№ С…РѕРґ*/
 	for (int i = matrix_dim-1; i >= 0; i--) {
 		x[i] = 0;
 		for (size_t j = i+1; j < matrix_dim; j++) {
@@ -83,7 +83,7 @@ double** CreateManualMatrix(size_t matrix_dim) {
 	}
 
 	for (size_t row_n = 0; row_n < matrix_dim; row_n++) {
-		std::cout << "Введите " << row_n << " строку массива поэлементно:" << std::endl;
+		std::cout << "Р’РІРµРґРёС‚Рµ " << row_n << " СЃС‚СЂРѕРєСѓ РјР°СЃСЃРёРІР° РїРѕСЌР»РµРјРµРЅС‚РЅРѕ:" << std::endl;
 		for (size_t column_n = 0; column_n < matrix_dim; column_n++) {
 			std::cin >> matrix[row_n][column_n];
 		}
@@ -101,7 +101,7 @@ double* CreateManualVector(size_t vector_dim) {
 
 	double* vector = new double[vector_dim];
 
-	std::cout << "Введите вектор поэлементно" << std::endl;
+	std::cout << "Р’РІРµРґРёС‚Рµ РІРµРєС‚РѕСЂ РїРѕСЌР»РµРјРµРЅС‚РЅРѕ" << std::endl;
 	for (size_t i = 0; i < vector_dim; i++) {
 		std::cin >> vector[i];
 	}

@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include "MatrixTools.h"
 #include <locale>
 
@@ -7,9 +7,9 @@
 int main() {
     setlocale(LC_CTYPE, "RU");
     for (;;) {
-        std::cout << "Âûáåðèòå ñïîñîá çàäàíèÿ ìàòðèöû è âåêòîðîâ:" << std::endl;
-        std::cout << "\t 0. Ðó÷íîå" << std::endl;
-        std::cout << "\t 1. Ñëó÷àéíûìè ÷èñëàìè" << std::endl;
+        std::cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ ÑÐ¿Ð¾ÑÐ¾Ð± Ð·Ð°Ð´Ð°Ð½Ð¸Ñ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†Ñ‹ Ð¸ Ð²ÐµÐºÑ‚Ð¾Ñ€Ð¾Ð²:" << std::endl;
+        std::cout << "\t 0. Ð ÑƒÑ‡Ð½Ð¾Ðµ" << std::endl;
+        std::cout << "\t 1. Ð¡Ð»ÑƒÑ‡Ð°Ð¹Ð½Ñ‹Ð¼Ð¸ Ñ‡Ð¸ÑÐ»Ð°Ð¼Ð¸" << std::endl;
         int chosen_fill;
         std::cin >> chosen_fill;
 
@@ -29,21 +29,21 @@ int main() {
             x = CreateRandVector(MATRIX_DIM);
             break;
         default:
-            std::cout << "Íåâåðíî óêàçàí ñïîñîá çàäàíèÿ!" << std::endl;
+            std::cout << "ÐÐµÐ²ÐµÑ€Ð½Ð¾ ÑƒÐºÐ°Ð·Ð°Ð½ ÑÐ¿Ð¾ÑÐ¾Ð± Ð·Ð°Ð´Ð°Ð½Ð¸Ñ!" << std::endl;
             break;
         }
 
-        std::cout << "Ìàòðèöà A:" << std::endl;
+        std::cout << "ÐœÐ°Ñ‚Ñ€Ð¸Ñ†Ð° A:" << std::endl;
         PrintMatrix(A, MATRIX_DIM);
         std::cout << std::endl;
 
-        std::cout << "Âåêòîð b:" << std::endl;
+        std::cout << "Ð’ÐµÐºÑ‚Ð¾Ñ€ b:" << std::endl;
         PrintVector(b, MATRIX_DIM);
         std::cout << std::endl;
 
 
         GaussMethod(A, b, x, MATRIX_DIM);
-        std::cout << "Âåêòîð x:" << std::endl;
+        std::cout << "Ð’ÐµÐºÑ‚Ð¾Ñ€ x:" << std::endl;
         PrintVector(x, MATRIX_DIM);
         std::cout << std::endl;
 
