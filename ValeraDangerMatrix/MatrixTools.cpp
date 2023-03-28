@@ -109,6 +109,22 @@ double* CreateManualVector(size_t vector_dim) {
 	return vector;
 }
 
+double* CopyVector(double* vector, size_t vector_dim) {
+	double* copied_vector = new double[vector_dim];
+	for (size_t i = 0; i < vector_dim; i++) {
+		copied_vector[i] = vector[i];
+	}
+	return copied_vector;
+}
+
+double** CopyMatrix(double** matrix, size_t matrix_dim) {
+	double** copied_matrix = new double* [matrix_dim];
+	for (size_t i = 0; i < matrix_dim; i++) {
+		copied_matrix[i] = CopyVector(matrix[i], matrix_dim);
+	}
+	return copied_matrix;
+}
+
 void PrintVector(double* vector, size_t vector_dim) {
 	if (vector_dim == 0) {
 		throw "Zero vector dim";

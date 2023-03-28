@@ -11,6 +11,9 @@ double* CreateRandVector(size_t vector_dim);
 double** CreateManualMatrix(size_t matrix_dim);
 double* CreateManualVector(size_t matrix_dim);
 
+double* CopyVector(double* vector, size_t vector_dim);
+double** CopyMatrix(double** matrix, size_t matrix_dim);
+
 void PrintVector(double* vector, size_t vector_dim);
 void PrintMatrix(double** matrix, size_t matrix_dim);
 

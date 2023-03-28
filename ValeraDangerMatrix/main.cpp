@@ -33,6 +33,9 @@ int main() {
             break;
         }
 
+        double* inital_b = CopyVector(b, MATRIX_DIM); //vector b chages in GaussMethod
+        double** inital_A = CopyMatrix(A, MATRIX_DIM); //matrix A chages in GaussMethod
+
         std::cout << "Матрица A:" << std::endl;
         PrintMatrix(A, MATRIX_DIM);
         std::cout << std::endl;
@@ -47,11 +50,14 @@ int main() {
         PrintVector(x, MATRIX_DIM);
         std::cout << std::endl;
 
-        double err = ErrCalc(A, b, x, MATRIX_DIM);
+        double err = ErrCalc(inital_A, inital_b, x, MATRIX_DIM);
         std::cout << "ERR = " << err << std::endl;
         std::cout << "---------------------------------------------------------------------- " << std::endl;
 
+
         DeleteArray(A, MATRIX_DIM);
+        DeleteArray(inital_A, MATRIX_DIM);
+        DeleteArray(inital_b);
         DeleteArray(b);
         DeleteArray(x);
 
